@@ -5,7 +5,6 @@ import { FriendsList } from "./Friends/FriendsList.styled";
 import { FriendsItem } from "./Friends/FriendsItem";
 import { TransactionWrapper, TableHeadRow } from "./Transactions/Transaction.styled";
 import { Transaction } from "./Transactions/Transaction";
-// import { Box } from 'components/Box';
 import stats from "../data.json"
 import user from "../user.json";
 import friends from "../friends.json";
@@ -45,8 +44,3 @@ export const App = () => {
     </>
   );
 };
-
-// stats.map((stat) => {
-//   console.log(stat.id)
-//   console.log(stat)
-// })
