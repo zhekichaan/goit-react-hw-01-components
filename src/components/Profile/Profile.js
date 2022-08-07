@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { Box } from 'components/Box';
 import { ProfileStat } from "../ProfileStat/ProfileStat";
 import { ProfileStats, ProfileName } from './Profile.styled';

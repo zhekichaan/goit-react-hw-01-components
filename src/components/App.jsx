@@ -1,6 +1,6 @@
 import { Profile } from "./Profile/Profile";
 import { Statistics } from "./Statistics/Statistics";
-import { StatisticsWrapper } from './Statistics/StatisticsWrapper.styled'
+import { StatisticsWrapper } from './Statistics/Statistics.styled'
 import { FriendsList } from "./Friends/FriendsList.styled";
 import { FriendsItem } from "./Friends/FriendsItem";
 import { TransactionWrapper, TableHeadRow } from "./Transactions/Transaction.styled";
