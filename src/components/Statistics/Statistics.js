@@ -1,22 +1,23 @@
 import PropTypes from 'prop-types';
-import { StatListItem } from './Statistics.styled';
+import { StatList, StatListItem } from './Statistics.styled';
 
 
-export const Statistics = ({
-    stat: { label, percentage }, 
-}) => {
+export const Statistics = ({ stats }) => {
     return (
-        <StatListItem>
-            <span>{label}</span>
-            <span>{`${percentage}%`}</span>
-        </StatListItem>
-    );
+    <StatList>
+        {stats.map((stat) => (
+            <StatListItem key={stat.id}>
+                <span>{stat.label}</span>
+                <span>{`${stat.percentage}%`}</span>
+            </StatListItem>
+        ))}
+    </StatList>
+    )
 };
 
 Statistics.propTypes = {
-    stat: PropTypes.shape({
+    stats: PropTypes.arrayOf(PropTypes.shape({
         label: PropTypes.string.isRequired,
         percentage: PropTypes.number.isRequired,
-    }).isRequired,
+    })).isRequired,
 }
-

@@ -3,7 +3,7 @@ import { Box } from 'components/Box';
 import { ProfileStat } from "../ProfileStat/ProfileStat";
 import { ProfileStats, ProfileName } from './Profile.styled';
 
-export const Profile = ({ user: { username, tag, location, avatar, stats} }) => {
+export const Profile = ({ username, tag, location, avatar, stats }) => {
     return (
         <Box width="350px" mx="auto" bg="white" borderRadius="sm" mt="50px">
             <Box display="flex" flexDirection="column" alignItems="center" height="330px" justifyContent="space-evenly">
@@ -22,12 +22,14 @@ export const Profile = ({ user: { username, tag, location, avatar, stats} }) => 
 }
 
 Profile.propTypes = {
-    user: PropTypes.shape({
-      username: PropTypes.string.isRequired,
-      tag: PropTypes.string.isRequired,
-      location: PropTypes.string.isRequired,
-      avatar: PropTypes.string.isRequired,
-      stats: PropTypes.object.isRequired,
-    }).isRequired,
+    username: PropTypes.string.isRequired,
+    tag: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+    stats: PropTypes.exact({
+        followers: PropTypes.number.isRequired,
+        views: PropTypes.number.isRequired,
+        likes: PropTypes.number.isRequired,
+    }),
 };
 

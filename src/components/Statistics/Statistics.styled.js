@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StatisticsWrapper = styled.ul`
+export const StatList = styled.ul`
     display: flex;
     margin-left: auto;
     // margin-right: auto;
