@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import { Box } from 'components/Box';
-import { ProfileStat } from "../ProfileStat/ProfileStat";
-import { ProfileStats, ProfileName } from './Profile.styled';
+import { ProfileStats, ProfileName, StatsWrapper, StatsAmount } from './Profile.styled';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
+    const {followers, views, likes} = stats
     return (
         <Box width="350px" mx="auto" bg="white" borderRadius="sm" mt="50px">
             <Box display="flex" flexDirection="column" alignItems="center" height="330px" justifyContent="space-evenly">
@@ -13,9 +13,18 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
                 <p>{location}</p>
             </Box>
             <ProfileStats>
-                <ProfileStat text="Followers" value={stats.followers} />
-                <ProfileStat text="Views" value={stats.views} />
-                <ProfileStat text="Likes" value={stats.likes} />
+                <StatsWrapper>
+                    <p>Followers</p>
+                    <StatsAmount>{followers}</StatsAmount>
+                </StatsWrapper>
+                <StatsWrapper>
+                    <p>Views</p>
+                    <StatsAmount>{views}</StatsAmount>
+                </StatsWrapper>
+                <StatsWrapper>
+                    <p>Likes</p>
+                    <StatsAmount>{likes}</StatsAmount>
+                </StatsWrapper>
             </ProfileStats>
         </Box>
     )

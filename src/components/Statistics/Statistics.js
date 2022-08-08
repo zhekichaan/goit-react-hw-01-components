@@ -1,17 +1,20 @@
+import { Box } from 'components/Box';
 import PropTypes from 'prop-types';
 import { StatList, StatListItem } from './Statistics.styled';
 
 
 export const Statistics = ({ stats }) => {
     return (
-    <StatList>
-        {stats.map((stat) => (
-            <StatListItem key={stat.id}>
-                <span>{stat.label}</span>
-                <span>{`${stat.percentage}%`}</span>
-            </StatListItem>
-        ))}
-    </StatList>
+        <Box>
+            <StatList>
+                {stats.map(({ id, label, percentage }) => (
+                    <StatListItem key={id}>
+                        <span>{label}</span>
+                        <span>{`${percentage}%`}</span>
+                    </StatListItem>
+                ))}
+            </StatList>
+        </Box>
     )
 };
 

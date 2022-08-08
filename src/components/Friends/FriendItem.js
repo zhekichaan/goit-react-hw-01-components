@@ -6,11 +6,11 @@ import { FriendsList } from "./FriendsList.styled";
 export const FriendsItem = ({ friends }) => {
     return (
         <FriendsList>
-            {friends.map(friend => (
-                <FrindsItemWrapper key={friend.id}>
-                    {friend.isOnline ? <OnlineIcon /> : <OfflineIcon />}
-                    <img src={friend.avatar} width="50px" alt='User avatar' />
-                    <p>{friend.name}</p>
+            {friends.map(({ id, isOnline, avatar, name }) => (
+                <FrindsItemWrapper key={id}>
+                    {isOnline ? <OnlineIcon /> : <OfflineIcon />}
+                    <img src={avatar} width="50px" alt='User avatar' />
+                    <p>{name}</p>
                 </FrindsItemWrapper>
             ))}
         </FriendsList>
