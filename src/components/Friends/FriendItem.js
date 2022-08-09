@@ -3,7 +3,7 @@ import { FrindsItemWrapper, OnlineIcon, OfflineIcon } from './FriendsList.styled
 import { FriendsList } from "./FriendsList.styled";
 
 
-export const FriendsItem = ({ friends }) => {
+export const Friends = ({ friends }) => {
     return (
         <FriendsList>
             {friends.map(({ id, isOnline, avatar, name }) => (
@@ -17,7 +17,7 @@ export const FriendsItem = ({ friends }) => {
     )
 }     
 
-FriendsItem.propTypes = {
+Friends.propTypes = {
     friends: PropTypes.arrayOf(PropTypes.shape({
         avatar: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,

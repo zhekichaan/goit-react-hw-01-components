@@ -1,11 +1,12 @@
 import { Box } from 'components/Box';
 import PropTypes from 'prop-types';
-import { StatList, StatListItem } from './Statistics.styled';
+import { StatList, StatListItem, StatsTitle } from './Statistics.styled';
 
 
-export const Statistics = ({ stats }) => {
+export const Statistics = ({ title, stats }) => {
     return (
-        <Box>
+        <Box mt="40px" display="flex" flexDirection="column" alignItems="center">
+            {title ? <StatsTitle>{title}</StatsTitle> : console.log("No Title")}
             <StatList>
                 {stats.map(({ id, label, percentage }) => (
                     <StatListItem key={id}>
@@ -23,4 +24,6 @@ Statistics.propTypes = {
         label: PropTypes.string.isRequired,
         percentage: PropTypes.number.isRequired,
     })).isRequired,
+    title: PropTypes.string,
 }
+

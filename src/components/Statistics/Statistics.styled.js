@@ -4,10 +4,9 @@ export const StatList = styled.ul`
     display: flex;
     margin-left: auto;
     // margin-right: auto;
-    // width: 300px;
+    width: 500px;
     padding: 0px;
-    // marin-top: 50px; 
-    margin: 50px auto 0px;
+    margin: 0px auto;
     justify-content: center;
     list-style: none;
 `
@@ -22,5 +21,13 @@ export const StatListItem = styled.li`
     // padding: ${p => p.theme.space[4]}px ${p => p.theme.space[5]}px;
     width: 100px;
     height: 80px;
-    border: ${p => p.theme.borders.normal}
+    border: ${p => p.theme.borders.normal};
+`
+
+export const StatsTitle = styled.h2`
+    width: 500px;
+    border: ${p => p.theme.borders.normal};
+    padding: ${p => p.theme.space[5]}px;
+    text-align: center;
+    background-color: ${p => p.theme.colors.white}
 `
