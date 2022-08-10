@@ -6,7 +6,7 @@ import { StatList, StatListItem, StatsTitle } from './Statistics.styled';
 export const Statistics = ({ title, stats }) => {
     return (
         <Box mt="40px" display="flex" flexDirection="column" alignItems="center">
-            {title ? <StatsTitle>{title}</StatsTitle> : console.log("No Title")}
+            {title && <StatsTitle>{title}</StatsTitle>}
             <StatList>
                 {stats.map(({ id, label, percentage }) => (
                     <StatListItem key={id}>
